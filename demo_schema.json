@@ -1,0 +1,112 @@
+{
+  "tables": [
+    {
+      "name": "customers",
+      "description": "Customer Information Table",
+      "columns": [
+        {
+          "name": "customer_id",
+          "type": "integer",
+          "description": "Unique identifier for customer"
+        },
+        {
+          "name": "customer_name",
+          "type": "text",
+          "description": "Name of the customer"
+        },
+        {
+          "name": "region",
+          "type": "text",
+          "description": "Geographic region (North, South, East, West, Central)"
+        },
+        {
+          "name": "segment",
+          "type": "text",
+          "description": "Customer segment (Enterprise, SMB, Startup, Individual)"
+        },
+        {
+          "name": "signup_date",
+          "type": "date",
+          "description": "Date when customer signed up"
+        },
+        {
+          "name": "credit_limit",
+          "type": "numeric",
+          "description": "Maximum credit limit for customer"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "description": "Customer status (Active, Inactive)"
+        }
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "orders",
+      "description": "Customer Order Details Table",
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "integer",
+          "description": "Unique identifier for order"
+        },
+        {
+          "name": "customer_id",
+          "type": "integer",
+          "description": "Reference to customer who placed the order"
+        },
+        {
+          "name": "order_date",
+          "type": "date",
+          "description": "Date when order was placed"
+        },
+        {
+          "name": "product_category",
+          "type": "text",
+          "description": "Category of product ordered (Electronics, Clothing, Food, Books, Home)"
+        },
+        {
+          "name": "quantity",
+          "type": "integer",
+          "description": "Number of items ordered"
+        },
+        {
+          "name": "unit_price",
+          "type": "numeric",
+          "description": "Price per unit"
+        },
+        {
+          "name": "total_amount",
+          "type": "numeric",
+          "description": "Total order amount (quantity * unit_price)"
+        },
+        {
+          "name": "quality_rating",
+          "type": "text",
+          "description": "Product quality rating (Premium, Standard, Basic)"
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "description": "Order status (Completed, Pending, Shipped, Cancelled)"
+        },
+        {
+          "name": "delivery_days",
+          "type": "integer",
+          "description": "Number of days for delivery (null if not yet delivered)"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column": "customer_id",
+          "references_table": "customers",
+          "references_column": "customer_id"
+        }
+      ]
+    }
+  ]
+}
+
+
+

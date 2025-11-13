@@ -1,0 +1,70 @@
+{
+  "total_generated": 5,
+  "valid_views": 2,
+  "invalid_views": 3,
+  "views": [
+    {
+      "is_valid": true,
+      "view_name": "customer_segment_breakdown",
+      "errors": [],
+      "warnings": [],
+      "sql": "SELECT region, segment\nFROM customers\nGROUP BY region, segment;",
+      "semantic_score": null
+    },
+    {
+      "is_valid": false,
+      "view_name": "customer_orders_summary",
+      "errors": [
+        "SELECT: Column 'customer_name' does not exist in table 'orders'",
+        "SELECT: Unknown table reference 'SUM(orders'",
+        "SELECT: Unknown table reference 'SUM(orders'",
+        "GROUP BY: Column 'customer_name' does not exist in table 'orders'"
+      ],
+      "warnings": [],
+      "sql": null,
+      "semantic_score": null
+    },
+    {
+      "is_valid": false,
+      "view_name": "top_customers_by_order_value",
+      "errors": [
+        "SELECT: Column 'customer_name' does not exist in table 'orders'",
+        "SELECT: Unknown table reference 'SUM(orders'",
+        "SELECT: Column 'credit_limit' does not exist in table 'orders'",
+        "GROUP BY: Column 'customer_name' does not exist in table 'orders'",
+        "ORDER BY: Unknown table reference 'SUM(orders'"
+      ],
+      "warnings": [],
+      "sql": null,
+      "semantic_score": null
+    },
+    {
+      "is_valid": false,
+      "view_name": "product_category_sales",
+      "errors": [
+        "SELECT: Unknown table reference 'SUM(orders'",
+        "SELECT: Unknown table reference 'SUM(orders'"
+      ],
+      "warnings": [],
+      "sql": null,
+      "semantic_score": null
+    },
+    {
+      "is_valid": true,
+      "view_name": "customer_status_breakdown",
+      "errors": [],
+      "warnings": [],
+      "sql": "SELECT customers.region, customers.segment, customers.status\nFROM customers\nGROUP BY customers.region, customers.segment, customers.status;",
+      "semantic_score": null
+    }
+  ],
+  "summary": {
+    "total_generated": 5,
+    "after_deduplication": 5,
+    "duplicates_removed": 0,
+    "valid": 2,
+    "invalid": 3,
+    "success_rate": "40.0%"
+  }
+}
+
