@@ -1,0 +1,25 @@
+# Minimal Requirements for AI Database View Generator
+# Use this for quick setup if full requirements.txt fails
+
+# Core dependencies (required)
+pydantic>=2.0.0
+requests>=2.31.0
+networkx>=3.0
+pandas>=2.0.0
+numpy>=1.24.0
+streamlit>=1.28.0
+
+# Excel support (required for demo mode)
+openpyxl>=3.1.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# LLM provider (optional - install if using cloud LLMs)
+# litellm>=1.20.0
+
+# PostgreSQL (optional - install if using PostgreSQL database)
+# psycopg2-binary>=2.9.9
+
+# Visualization (optional)
+# plotly>=5.17.0

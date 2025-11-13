@@ -1,20 +1,102 @@
-# Core dependencies
-pydantic>=2.0.0
-requests>=2.31.0
-networkx>=3.0
+# ============================================
+# AI Database View Generator - Requirements
+# ============================================
 
-# Database support
-psycopg2-binary>=2.9.9
+# Core Data Validation & Schema
+pydantic>=2.0.0,<3.0.0
 
-# LLM providers
-litellm>=1.20.0
+# HTTP Client for LLM API calls
+requests>=2.31.0,<3.0.0
 
-# UI
-streamlit>=1.28.0
+# Graph algorithms for FK relationship traversal
+networkx>=3.0,<4.0
 
-# Optional visualization
-plotly>=5.17.0
+# Data manipulation and analysis
+pandas>=2.0.0,<3.0.0
+numpy>=1.24.0,<2.0.0
 
-# Development
-pytest>=7.4.0
-pytest-asyncio>=0.21.0
+# ============================================
+# LLM Providers
+# ============================================
+
+# Multi-provider LLM interface (OpenAI, Anthropic, etc.)
+litellm>=1.20.0,<2.0.0
+
+# ============================================
+# Database Support
+# ============================================
+
+# PostgreSQL database adapter
+psycopg2-binary>=2.9.9,<3.0.0
+
+# Excel file support
+openpyxl>=3.1.0,<4.0.0
+xlrd>=2.0.0,<3.0.0
+
+# ============================================
+# User Interface
+# ============================================
+
+# Web UI framework
+streamlit>=1.28.0,<2.0.0
+
+# Visualization
+plotly>=5.17.0,<6.0.0
+
+# ============================================
+# Development & Testing (Optional)
+# ============================================
+
+# Testing framework
+pytest>=7.4.0,<8.0.0
+pytest-asyncio>=0.21.0,<1.0.0
+
+# Code quality
+black>=23.0.0,<24.0.0
+pylint>=3.0.0,<4.0.0
+mypy>=1.5.0,<2.0.0
+
+# ============================================
+# Additional Utilities
+# ============================================
+
+# Environment variable management
+python-dotenv>=1.0.0,<2.0.0
+
+# JSON schema validation
+jsonschema>=4.19.0,<5.0.0
+
+# Date/time handling (usually included in Python but explicit for clarity)
+python-dateutil>=2.8.0,<3.0.0
+
+# Logging utilities
+colorlog>=6.7.0,<7.0.0
+
+# ============================================
+# Notes
+# ============================================
+# 
+# Minimum Installation (Core functionality):
+#   pip install pydantic requests networkx pandas streamlit
+#
+# Recommended Installation (All features):
+#   pip install -r requirements.txt
+#
+# For local LLM (Ollama):
+#   Install Ollama separately from https://ollama.com
+#
+# For cloud LLMs:
+#   Set API keys in .env file (OPENAI_API_KEY or ANTHROPIC_API_KEY)
+#
+# For PostgreSQL database execution:
+#   Ensure PostgreSQL is installed and accessible
+#
+# For Excel demo mode:
+#   openpyxl is sufficient (included above)
+#
+# ============================================
+# Version Compatibility
+# ============================================
+# Python: 3.8+
+# Tested on: Python 3.8, 3.9, 3.10, 3.11
+# OS: Linux, macOS, Windows
